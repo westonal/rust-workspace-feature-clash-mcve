@@ -42,7 +42,7 @@ This is *incorrect*, as feature A is not specified in exe2's toml.
 
 Removing the feature from exe1 fixes exe2's behaviour as does removing exe1 from the workspace.
 
-```
+```toml
 members = [
     #"exe1",
     "exe2",
