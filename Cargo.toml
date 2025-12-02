@@ -6,3 +6,6 @@ members = [
     "exe2",
     "lib",
 ]
+
+[workspace.dependencies]
+lib = { path = "lib" }
