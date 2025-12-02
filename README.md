@@ -14,6 +14,32 @@ exe2 does not.
 
 But the feature is being enabled for both exes.
 
+# Solution
+
+Specify package, not bin:
+
+```shell
+cargo run --package exe2
+```
+
+See https://github.com/rust-lang/cargo/issues/8157
+
+## Alternative
+Another option is to expose the feature at the bin level and enable during exe1 build:
+
+Add:
+
+```toml
+[features]
+feature_a = ["lib/feature_a"]
+```
+
+To exe1 toml, and build like so:
+
+```shell
+cargo run --package exe1 --features feature_a
+```
+
 # Repro steps
 
 ```shell
